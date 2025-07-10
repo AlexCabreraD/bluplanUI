@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: rgba(15, 20, 37, 1);
+  
+  /* BluPlan Brand Colors */
+  --primary-blue: rgba(0, 156, 224, 1);
+  --secondary-dark: rgba(0, 59, 85, 1);
+  --dark-navy: rgba(15, 20, 37, 1);
+  --light-gray: rgba(241, 241, 241, 0.851);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary-blue);
+  --color-secondary: var(--secondary-dark);
+  --color-accent: var(--light-gray);
+  --color-text-dark: var(--dark-navy);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
