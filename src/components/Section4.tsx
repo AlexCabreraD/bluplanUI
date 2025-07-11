@@ -53,7 +53,7 @@ export default function Section4() {
                 Bringing visions to life
               </h2>
               <p className="text-xl text-gray-600">
-                See how we've transformed ideas into beautiful, functional spaces for our clients
+                See how we&apos;ve transformed ideas into beautiful, functional spaces for our clients
               </p>
             </div>
             <button className="bg-[#009ce0] hover:bg-[#0088cc] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer lg:flex-shrink-0">
