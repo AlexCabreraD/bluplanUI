@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const navigationItems = [
   { label: "Home", left: "left-0" },
@@ -12,8 +15,28 @@ const navigationItems = [
 ];
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 w-full h-20 z-50 backdrop-blur-xl border-b border-white/30 shadow-lg shadow-black/5" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+    <header 
+      className={`fixed top-0 left-0 right-0 w-full h-20 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'backdrop-blur-xl border-b border-white/30 shadow-lg shadow-black/5' 
+          : 'backdrop-blur-none border-b border-transparent'
+      }`}
+      style={{ 
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           <Link href="/" className="cursor-pointer transition-opacity hover:opacity-80">
@@ -32,7 +55,9 @@ export default function Header() {
                 <a
                   key={index}
                   href="#"
-                  className="text-gray-700 text-sm font-medium hover:text-gray-900 transition-colors duration-200 whitespace-nowrap relative py-2 px-1"
+                  className={`text-sm font-medium transition-colors duration-200 whitespace-nowrap relative py-2 px-1 ${
+                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
+                  }`}
                 >
                   {item.label}
                 </a>
