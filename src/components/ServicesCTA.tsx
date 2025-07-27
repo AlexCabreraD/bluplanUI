@@ -1,6 +1,6 @@
 import Divider from "./Divider";
 
-export default function Section5() {
+export default function ServicesCTA() {
   return (
     <>
       <section className="py-[75px] bg-white">
