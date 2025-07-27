@@ -58,7 +58,7 @@ export default function Footer() {
               <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">Home</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">Services</a></li>
+                <li><a href="/services" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">Services</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">Floor Plans</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">Projects</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1">About Us</a></li>
