@@ -30,22 +30,22 @@ const services = [
 export default function Section2() {
   return (
     <>
-      <section className="py-[75px] bg-white">
+      <section className="py-12 sm:py-16 lg:py-[75px] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-8 sm:mb-10 lg:mb-12">
             Services
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white border border-gray-200 hover:border-[#009ce0]/50 hover:bg-[#009ce0] hover:shadow-xl rounded-xl p-8 transition-all duration-300 ease-in-out hover:-translate-y-2"
+                className="group bg-white border border-gray-200 hover:border-[#009ce0]/50 hover:bg-[#009ce0] hover:shadow-xl rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2"
               >
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white mb-3 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-white mb-3 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 group-hover:text-white leading-relaxed transition-colors duration-300">
+                <p className="text-sm sm:text-base text-gray-600 group-hover:text-white leading-relaxed transition-colors duration-300">
                   {service.description}
                 </p>
               </div>
