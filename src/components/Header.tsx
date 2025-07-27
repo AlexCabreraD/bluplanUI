@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { label: "Home", left: "left-0" },
-  { label: "Services", left: "left-16" },
-  { label: "Floor Plans", left: "left-[146px]" },
-  { label: "Projects", left: "left-[243px]" },
-  { label: "About Us", left: "left-[322px]" },
-  { label: "Resources", left: "left-[406px]" },
-  { label: "Contact Us", left: "left-[501px]" },
+  { label: "Home", left: "left-0", href: "/" },
+  { label: "Services", left: "left-16", href: "/services" },
+  { label: "Floor Plans", left: "left-[146px]", href: "#" },
+  { label: "Projects", left: "left-[243px]", href: "#" },
+  { label: "About Us", left: "left-[322px]", href: "#" },
+  { label: "Resources", left: "left-[406px]", href: "#" },
+  { label: "Contact Us", left: "left-[501px]", href: "#" },
 ];
 
 export default function Header() {
@@ -29,13 +29,13 @@ export default function Header() {
           <div className="flex items-center space-x-8">
             <nav className="hidden lg:flex items-center space-x-8">
               {navigationItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href="#"
+                  href={item.href}
                   className="text-white text-sm font-medium hover:opacity-80 transition-opacity cursor-pointer"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
