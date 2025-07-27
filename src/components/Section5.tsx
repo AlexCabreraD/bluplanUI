@@ -6,7 +6,7 @@ export default function Section5() {
       <section className="py-[75px] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#009ce0] rounded-[20px] px-8 py-16 text-center">
-            <h2 className="text-white text-[52px] leading-[52px] font-bold mb-6 text-center">
+            <h2 className="text-white text-[52px] leading-[52px] font-bold mb-6">
               We turn visions into buildable spaces
             </h2>
             

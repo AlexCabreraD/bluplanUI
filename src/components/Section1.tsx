@@ -7,7 +7,7 @@ export default function Section1() {
       <section className="py-[75px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-end">
-            <div className="w-[454px] h-[346px] flex flex-col justify-end">
+            <div className="max-w-[454px] flex flex-col justify-end">
               <h2 className="text-[#009ce0] text-3xl font-bold leading-tight mb-6">
                 At BluPlan Studio, we specialize in turning residential visions into fully detailed, ready to build projects.
               </h2>

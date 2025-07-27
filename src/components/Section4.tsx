@@ -19,24 +19,11 @@ const projects = [
   {
     title: "Excepteur occaecat",
     image: "/images/home/gallery/BP-Web-Home-Projects4.png"
-  },
-  {
-    title: "39th Street",
-    image: "/images/home/gallery/BP-Web-Home-Projects1.png"
-  },
-  {
-    title: "North G Street", 
-    image: "/images/home/gallery/BP-Web-Home-Projects2.png"
-  },
-  {
-    title: "Dean Dr",
-    image: "/images/home/gallery/BP-Web-Home-Projects3.png"
-  },
-  {
-    title: "Excepteur occaecat",
-    image: "/images/home/gallery/BP-Web-Home-Projects4.png"
   }
 ];
+
+// Duplicate projects for scroll effect
+const displayProjects = [...projects, ...projects];
 
 export default function Section4() {
   return (
@@ -82,7 +69,7 @@ export default function Section4() {
                 document.addEventListener('mouseup', handleMouseUp);
               }}
             >
-              {projects.map((project, index) => (
+              {displayProjects.map((project, index) => (
                 <div
                   key={index}
                   className="relative flex-shrink-0 w-[373px] min-w-[200px] h-[507px] group overflow-hidden"

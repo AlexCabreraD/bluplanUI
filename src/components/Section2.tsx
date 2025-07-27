@@ -36,16 +36,16 @@ export default function Section2() {
             Services
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-gray-100 hover:bg-[#009ce0] transition-all duration-300 ease-in-out p-8"
+                className="group bg-white border border-gray-200 hover:border-[#009ce0]/50 hover:bg-[#009ce0] hover:shadow-xl rounded-xl p-8 transition-all duration-300 ease-in-out hover:-translate-y-2"
               >
-                <h3 className="text-[28px] leading-[30px] font-normal text-black group-hover:text-white mb-4 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white mb-3 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-[16px] leading-[24px] font-light text-gray-700 group-hover:text-white transition-colors duration-300">
+                <p className="text-gray-600 group-hover:text-white leading-relaxed transition-colors duration-300">
                   {service.description}
                 </p>
               </div>
