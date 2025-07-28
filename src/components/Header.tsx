@@ -10,9 +10,9 @@ const navigationItems = [
   { label: "Services", left: "left-16", href: "/services" },
   { label: "Floor Plans", left: "left-[146px]", href: "/floor-plans" },
   { label: "Projects", left: "left-[243px]", href: "/projects" },
-  { label: "About Us", left: "left-[322px]", href: "#" },
-  { label: "Resources", left: "left-[406px]", href: "#" },
-  { label: "Contact Us", left: "left-[501px]", href: "#" },
+  { label: "About Us", left: "left-[322px]", href: "/about-us" },
+  { label: "Resources", left: "left-[406px]", href: "/resources" },
+  { label: "Contact Us", left: "left-[501px]", href: "/contact-us" },
 ];
 
 export default function Header() {

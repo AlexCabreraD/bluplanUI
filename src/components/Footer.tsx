@@ -62,7 +62,9 @@ export default function Footer() {
                 <li><Link href="/services" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">Services</Link></li>
                 <li><Link href="/floor-plans" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">Floor Plans</Link></li>
                 <li><Link href="/projects" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">Projects</Link></li>
-                <li><a href="#" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">About Us</a></li>
+                <li><Link href="/about-us" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">About Us</Link></li>
+                <li><Link href="/resources" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">Resources</Link></li>
+                <li><Link href="/contact-us" className="text-gray-300 hover:text-[#009ce0] transition-colors duration-200 block py-1 text-sm sm:text-base">Contact Us</Link></li>
               </ul>
             </div>
             
