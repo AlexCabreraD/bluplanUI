@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const navigationItems = [
   { label: "Home", left: "left-0", href: "/" },
@@ -27,7 +27,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full h-20 z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(15, 20, 37, 0.9)' }}>
+    <header
+      className="fixed top-0 left-0 right-0 w-full h-20 z-50 backdrop-blur-md"
+      style={{ backgroundColor: "rgba(15, 20, 37, 0.9)" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           <Link href="/" className="cursor-pointer" onClick={closeMobileMenu}>
@@ -64,18 +67,17 @@ export default function Header() {
               className="lg:hidden text-white hover:opacity-80 transition-opacity p-2"
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? (
-                <X size={24} />
-              ) : (
-                <Menu size={24} />
-              )}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 right-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(15, 20, 37, 0.95)' }}>
+          <div
+            className="lg:hidden absolute top-20 left-0 right-0 backdrop-blur-md"
+            style={{ backgroundColor: "rgba(15, 20, 37, 0.95)" }}
+          >
             <nav className="px-4 py-6 space-y-4">
               {navigationItems.map((item, index) => (
                 <Link

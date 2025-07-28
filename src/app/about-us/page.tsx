@@ -1,9 +1,9 @@
-import PageLayout from "../../components/PageLayout";
-import PageHero from "../../components/PageHero";
 import AboutSection1 from "../../components/AboutSection1";
 import AboutSection2 from "../../components/AboutSection2";
-import ServicesCTA from "../../components/ServicesCTA";
 import Divider from "../../components/Divider";
+import PageHero from "../../components/PageHero";
+import PageLayout from "../../components/PageLayout";
+import ServicesCTA from "../../components/ServicesCTA";
 
 export default function AboutUs() {
   return (

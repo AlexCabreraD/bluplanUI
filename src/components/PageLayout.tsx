@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import Header from "./Header";
+
 import Footer from "./Footer";
+import Header from "./Header";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -10,9 +11,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

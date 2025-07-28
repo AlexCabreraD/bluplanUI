@@ -1,7 +1,7 @@
-import PageLayout from "../../components/PageLayout";
-import PageHero from "../../components/PageHero";
-import ServicesCTA from "../../components/ServicesCTA";
 import Divider from "../../components/Divider";
+import PageHero from "../../components/PageHero";
+import PageLayout from "../../components/PageLayout";
+import ServicesCTA from "../../components/ServicesCTA";
 
 export default function ContactUs() {
   return (

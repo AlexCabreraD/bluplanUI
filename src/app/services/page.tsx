@@ -1,7 +1,7 @@
-import PageLayout from "../../components/PageLayout";
 import PageHero from "../../components/PageHero";
-import ServicesSection1 from "../../components/ServicesSection1";
+import PageLayout from "../../components/PageLayout";
 import ServicesCTA from "../../components/ServicesCTA";
+import ServicesSection1 from "../../components/ServicesSection1";
 
 export default function Services() {
   return (

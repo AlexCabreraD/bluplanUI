@@ -1,6 +1,6 @@
-import PageLayout from "../../components/PageLayout";
-import PageHero from "../../components/PageHero";
 import FloorPlansSection from "../../components/FloorPlansSection";
+import PageHero from "../../components/PageHero";
+import PageLayout from "../../components/PageLayout";
 import ServicesCTA from "../../components/ServicesCTA";
 
 export default function FloorPlans() {

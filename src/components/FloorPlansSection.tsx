@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import FloorPlansGrid, { allFloorPlans, FloorPlan } from "./FloorPlansGrid";
-import FloorPlansFilter, { FilterState } from "./FloorPlansFilter";
+
 import Divider from "./Divider";
+import FloorPlansFilter, { FilterState } from "./FloorPlansFilter";
+import FloorPlansGrid, { allFloorPlans, FloorPlan } from "./FloorPlansGrid";
 
 interface FloorPlansSectionProps {
   showFilters?: boolean;
@@ -20,7 +21,7 @@ export default function FloorPlansSection({
   title,
   description,
   showViewAllButton = false,
-  containerClassName = ""
+  containerClassName = "",
 }: FloorPlansSectionProps) {
   const [filteredPlans, setFilteredPlans] = useState<FloorPlan[]>(allFloorPlans);
 
@@ -36,7 +37,6 @@ export default function FloorPlansSection({
     if (filters.bedrooms.length > 0) {
       filtered = filtered.filter(plan => filters.bedrooms.includes(plan.bedrooms));
     }
-
 
     setFilteredPlans(filtered);
   };
@@ -54,10 +54,10 @@ export default function FloorPlansSection({
               <div className="lg:w-1/4">
                 <FloorPlansFilter onFilterChange={handleFilterChange} />
               </div>
-              
+
               {/* Floor Plans Grid */}
               <div className="lg:w-3/4">
-                <FloorPlansGrid 
+                <FloorPlansGrid
                   floorPlans={displayPlans}
                   className="grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
                 />
@@ -65,7 +65,7 @@ export default function FloorPlansSection({
             </div>
           </div>
         </section>
-        
+
         <Divider variant="grey" />
       </>
     );
@@ -81,23 +81,23 @@ export default function FloorPlansSection({
               {title}
             </h2>
           )}
-          
+
           {description && (
             <p className="text-sm sm:text-base lg:text-[16px] lg:leading-[24px] font-light text-gray-700 mb-8 sm:mb-10 lg:mb-12 max-w-2xl">
               {description}
             </p>
           )}
-        
-          <FloorPlansGrid 
+
+          <FloorPlansGrid
             floorPlans={displayPlans}
             showLimit={showLimit}
             className="mb-8 sm:mb-10 lg:mb-12"
           />
-          
+
           {showViewAllButton && (
             <div className="inline-block relative group">
-              <a 
-                href="/floor-plans" 
+              <a
+                href="/floor-plans"
                 className="text-black font-semibold text-sm sm:text-[14px] sm:leading-[24px] inline-flex items-center gap-2 pb-1 relative"
               >
                 See All Floor Plans
