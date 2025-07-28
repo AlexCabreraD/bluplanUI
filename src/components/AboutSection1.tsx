@@ -32,19 +32,29 @@ export default function AboutSection1() {
           />
         </div>
 
-        {/* Text Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {textContent.map((item, index) => (
-            <div key={index} className={index % 2 === 0 ? "" : index === 3 ? "" : ""}>
-              <p className={`${
-                item.className || "text-sm sm:text-base text-gray-800 leading-relaxed"
-              } ${
-                index < 3 ? "mb-0" : ""
-              }`}>
-                {item.text}
+        {/* Text Content */}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row">
+            {/* Left Column */}
+            <div className="flex-1 lg:pr-6">
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed mb-[18px]">
+                {textContent[0].text}
+              </p>
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
+                {textContent[2].text}
               </p>
             </div>
-          ))}
+            
+            {/* Right Column */}
+            <div className="flex-1 lg:pl-6 mt-6 lg:mt-0">
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed mb-[18px]">
+                {textContent[1].text}
+              </p>
+              <p className="text-[32px] leading-[36px] text-[#009ce0] font-medium">
+                {textContent[3].text}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
