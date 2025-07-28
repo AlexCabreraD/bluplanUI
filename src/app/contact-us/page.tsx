@@ -1,3 +1,4 @@
+import ContactForm from "../../components/ContactForm";
 import Divider from "../../components/Divider";
 import PageHero from "../../components/PageHero";
 import PageLayout from "../../components/PageLayout";
@@ -12,6 +13,7 @@ export default function ContactUs() {
         imageSrc="/images/contact/hero/contact-us-hero.jpg"
         imageAlt="Contact BluPlan Studio - Get in touch with our architectural design team"
       />
+      <ContactForm />
       <Divider variant="grey" />
       <ServicesCTA />
     </PageLayout>
