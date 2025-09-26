@@ -1,9 +1,9 @@
-import AboutSection1 from "../../components/AboutSection1";
-import AboutSection2 from "../../components/AboutSection2";
-import Divider from "../../components/Divider";
-import PageHero from "../../components/PageHero";
-import PageLayout from "../../components/PageLayout";
-import ServicesCTA from "../../components/ServicesCTA";
+import AboutSection1 from "@/components/AboutSection1";
+import PageHero from "@/components/PageHero";
+import ServicesCTA from "@/components/ServicesCTA";
+import PageLayout from "@/components/layout/PageLayout";
+import AboutSection2 from "@/components/sections/AboutSection2";
+import Divider from "@/components/ui/Divider";
 
 export default function AboutUs() {
   return (

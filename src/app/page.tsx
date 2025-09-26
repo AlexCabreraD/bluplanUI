@@ -1,11 +1,11 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import Section1 from "../components/Section1";
-import Section2 from "../components/Section2";
-import Section3 from "../components/Section3";
-import Section4 from "../components/Section4";
-import Section5 from "../components/Section5";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import HeroSection from "@/components/sections/HeroSection";
+import Section1 from "@/components/sections/Section1";
+import Section2 from "@/components/sections/Section2";
+import Section3 from "@/components/sections/Section3";
+import Section4 from "@/components/sections/Section4";
+import Section5 from "@/components/sections/Section5";
 
 export default function Home() {
   return (

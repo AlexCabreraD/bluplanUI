@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Divider from "./Divider";
+import Divider from "@/components/ui/Divider";
 
 export default function ServicesCTA() {
   return (

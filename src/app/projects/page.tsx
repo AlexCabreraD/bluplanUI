@@ -1,8 +1,8 @@
-import Divider from "../../components/Divider";
-import PageHero from "../../components/PageHero";
-import PageLayout from "../../components/PageLayout";
-import ProjectsSection from "../../components/ProjectsSection";
-import ServicesCTA from "../../components/ServicesCTA";
+import PageHero from "@/components/PageHero";
+import ProjectsSection from "@/components/ProjectsSection";
+import ServicesCTA from "@/components/ServicesCTA";
+import PageLayout from "@/components/layout/PageLayout";
+import Divider from "@/components/ui/Divider";
 
 export default function Projects() {
   return (

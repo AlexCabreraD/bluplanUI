@@ -13,7 +13,7 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-black/50 sm:bg-black/40"></div>
       </div>
-      
+
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl">

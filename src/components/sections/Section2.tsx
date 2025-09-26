@@ -1,30 +1,36 @@
-import Divider from "./Divider";
+import Divider from "@/components/ui/Divider";
 
 const services = [
   {
     title: "Custom Residential Design",
-    description: "We create personalized home designs that reflect your vision, lifestyle, and site conditions."
+    description:
+      "We create personalized home designs that reflect your vision, lifestyle, and site conditions.",
   },
   {
     title: "ADU (Accessory Dwelling Unit) Design",
-    description: "We design efficient, stylish ADUs that maximize space, rental potential, and flexibility."
+    description:
+      "We design efficient, stylish ADUs that maximize space, rental potential, and flexibility.",
   },
   {
     title: "3D Modeling and Renderings",
-    description: "Experience your project before it's built through realistic, high-quality 3D visualizations."
+    description:
+      "Experience your project before it's built through realistic, high-quality 3D visualizations.",
   },
   {
     title: "Permit Management",
-    description: "We handle every step of the permitting process to ensure a fast, compliant, stress-free approval."
+    description:
+      "We handle every step of the permitting process to ensure a fast, compliant, stress-free approval.",
   },
   {
     title: "Feasibility Studies and Conceptual Design",
-    description: "We study your site's potential and regulations to build designs that are achievable and strategic."
+    description:
+      "We study your site's potential and regulations to build designs that are achievable and strategic.",
   },
   {
     title: "Construction Documents",
-    description: "We produce detailed technical drawings that streamline construction and meet code standards."
-  }
+    description:
+      "We produce detailed technical drawings that streamline construction and meet code standards.",
+  },
 ];
 
 export default function Section2() {
@@ -35,7 +41,7 @@ export default function Section2() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-8 sm:mb-10 lg:mb-12">
             Services
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <div
@@ -53,7 +59,7 @@ export default function Section2() {
           </div>
         </div>
       </section>
-      
+
       <Divider variant="grey" />
     </>
   );

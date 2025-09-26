@@ -1,30 +1,35 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
-import Divider from "./Divider";
+import Divider from "@/components/ui/Divider";
 
-const projects = [
+const homeProjects = [
   {
+    id: "project1",
     title: "39th Street",
     image: "/images/home/gallery/BP-Web-Home-Projects1.png",
   },
   {
+    id: "project2",
     title: "North G Street",
     image: "/images/home/gallery/BP-Web-Home-Projects2.png",
   },
   {
+    id: "project3",
     title: "Dean Dr",
     image: "/images/home/gallery/BP-Web-Home-Projects3.png",
   },
   {
+    id: "project1",
     title: "Excepteur occaecat",
     image: "/images/home/gallery/BP-Web-Home-Projects4.png",
   },
 ];
 
 // Duplicate projects for scroll effect
-const displayProjects = [...projects, ...projects];
+const displayProjects = [...homeProjects, ...homeProjects];
 
 export default function Section4() {
   return (
@@ -71,9 +76,10 @@ export default function Section4() {
             }}
           >
             {displayProjects.map((project, index) => (
-              <div
+              <Link
                 key={index}
-                className="relative flex-shrink-0 w-[280px] sm:w-[320px] md:w-[373px] min-w-[200px] h-[380px] sm:h-[440px] md:h-[507px] group overflow-hidden"
+                href={`/projects/${project.id}`}
+                className="relative flex-shrink-0 w-[280px] sm:w-[320px] md:w-[373px] min-w-[200px] h-[380px] sm:h-[440px] md:h-[507px] group overflow-hidden block"
               >
                 <Image
                   src={project.image}
@@ -96,7 +102,7 @@ export default function Section4() {
                     {project.title}
                   </h3>
                 </div>
-              </div>
+              </Link>
             ))}
 
             {/* Spacer to allow scrolling past last image */}
@@ -111,14 +117,14 @@ export default function Section4() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-block relative group">
-            <a
-              href="#"
+            <Link
+              href="/projects"
               className="text-black font-semibold text-sm sm:text-[14px] sm:leading-[24px] inline-flex items-center gap-2 pb-1 relative"
             >
               See All Projects
               <span className="text-base sm:text-lg">→</span>
               <div className="absolute bottom-0 left-0 h-[2px] bg-[#009ce0] w-0 group-hover:w-full transition-all duration-300 ease-out"></div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

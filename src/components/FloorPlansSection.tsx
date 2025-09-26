@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-import Divider from "./Divider";
+import Divider from "@/components/ui/Divider";
+
 import FloorPlansFilter, { FilterState } from "./FloorPlansFilter";
 import FloorPlansGrid, { allFloorPlans, FloorPlan } from "./FloorPlansGrid";
 

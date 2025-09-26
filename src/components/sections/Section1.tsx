@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Divider from "./Divider";
+import Divider from "@/components/ui/Divider";
 
 export default function Section1() {
   return (

@@ -1,9 +1,10 @@
-import Accordion from "../../components/Accordion";
-import Divider from "../../components/Divider";
-import PageHero from "../../components/PageHero";
-import PageLayout from "../../components/PageLayout";
-import ResponsiveContainer from "../../components/ResponsiveContainer";
-import ServicesCTA from "../../components/ServicesCTA";
+import PageHero from "@/components/PageHero";
+import ResponsiveContainer from "@/components/ResponsiveContainer";
+import ServicesCTA from "@/components/ServicesCTA";
+import PageLayout from "@/components/layout/PageLayout";
+import Accordion from "@/components/ui/Accordion";
+import Divider from "@/components/ui/Divider";
+
 import { generalFaqData, financingFaqData, permittingFaqData } from "../../data/faqData";
 
 const FAQ_SECTIONS = [

@@ -1,8 +1,8 @@
-import ContactForm from "../../components/ContactForm";
-import Divider from "../../components/Divider";
-import PageHero from "../../components/PageHero";
-import PageLayout from "../../components/PageLayout";
-import ServicesCTA from "../../components/ServicesCTA";
+import PageHero from "@/components/PageHero";
+import ServicesCTA from "@/components/ServicesCTA";
+import PageLayout from "@/components/layout/PageLayout";
+import ContactForm from "@/components/ui/ContactForm";
+import Divider from "@/components/ui/Divider";
 
 export default function ContactUs() {
   return (
