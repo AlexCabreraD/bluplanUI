@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {/* Hero Section */}
         <section className="relative bg-white">
           {/* Full-width hero image */}
-          <div className="relative w-full h-[70vh] min-h-[600px]">
+          <div className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
             <OptimizedImage
               src={project.heroImage}
               alt={project.hoverName}
@@ -38,22 +38,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
 
           {/* White Content Card Overlay */}
-          <div className="relative -mt-32 z-10">
+          <div className="relative -mt-16 sm:-mt-24 lg:-mt-32 z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-[832px] mx-auto">
-                <div className="bg-white px-[60px] pt-[40px] pb-[60px]">
+                <div className="bg-white px-4 sm:px-8 lg:px-[60px] pt-6 sm:pt-8 lg:pt-[40px] pb-6 sm:pb-8 lg:pb-12">
                   {/* Project Title */}
-                  <h1 className="text-5xl font-bold text-black mb-2">{project.hoverName}</h1>
-                  <p className="text-base text-gray-700 mb-8">{project.location}</p>
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-2 leading-tight">
+                    {project.hoverName}
+                  </h1>
+                  <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">
+                    {project.location}
+                  </p>
 
                   {/* Practice and Services Line */}
-                  <div className="flex items-start gap-x-16 mb-8">
-                    <div className="text-sm text-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-y-3 sm:gap-x-8 lg:gap-x-16 mb-6 sm:mb-8">
+                    <div className="text-xs sm:text-sm text-gray-700">
                       <span className="font-semibold text-gray-900">Category</span> —{" "}
                       {project.category || "Residential"}
                     </div>
                     {project.services && (
-                      <div className="text-sm text-gray-700">
+                      <div className="text-xs sm:text-sm text-gray-700">
                         <span className="font-semibold text-gray-900">Services</span> —{" "}
                         {project.services.join(", ")}
                       </div>
@@ -61,20 +65,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </div>
 
                   {/* Divider Line */}
-                  <div className="border-t border-gray-300 mb-8"></div>
+                  <div className="border-t border-gray-300 mb-6 sm:mb-8"></div>
 
                   {/* Description */}
-                  <p className="text-base text-gray-700 leading-relaxed mb-12">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-8 sm:mb-12">
                     {project.description}
                   </p>
 
                   {/* Divider Line */}
-                  <div className="border-t border-gray-300 mb-8"></div>
+                  <div className="border-t border-gray-300 mb-6 sm:mb-8"></div>
 
                   {/* Features Section */}
                   <div>
-                    <h3 className="text-base font-semibold text-gray-900 mb-8">Specifications</h3>
-                    <div className="flex items-center gap-x-12 mb-8">
+                    <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-6 sm:mb-8">
+                      Specifications
+                    </h3>
+                    <div className="grid grid-cols-2 sm:flex sm:items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-12 mb-6 sm:mb-8">
                       <FeatureIcon type="bed" value={project.bedrooms} label="Bed" />
                       <FeatureIcon type="bath" value={project.bathrooms} label="Bath" />
                       <FeatureIcon type="sqft" value={project.sqft} label="ft²" />
@@ -86,12 +92,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     {/* Project Features */}
                     {project.features && project.features.length > 0 && (
                       <div>
-                        <h4 className="text-sm font-semibold text-gray-900 mb-4">Key Features</h4>
-                        <ul className="text-sm text-gray-700 space-y-2">
+                        <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-3 sm:mb-4">
+                          Key Features
+                        </h4>
+                        <ul className="text-xs sm:text-sm text-gray-700 space-y-2">
                           {project.features.map((feature, index) => (
-                            <li key={`feature-${index}`} className="flex items-center">
-                              <span className="w-1.5 h-1.5 bg-[#009ce0] rounded-full mr-3 flex-shrink-0"></span>
-                              {feature}
+                            <li key={`feature-${index}`} className="flex items-start">
+                              <span className="w-1.5 h-1.5 bg-[#009ce0] rounded-full mr-3 flex-shrink-0 mt-1.5"></span>
+                              <span className="flex-1">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -107,7 +115,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {/* Full-Width Image Gallery */}
         <section className="bg-white">
           {/* Large Single Image */}
-          <div className="relative w-full mb-2">
+          <div className="relative w-full mb-1 sm:mb-2">
             <OptimizedImage
               src={project.galleryImages[1]}
               alt={`${project.hoverName} - Gallery Image 1`}
@@ -119,25 +127,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             />
           </div>
 
-          {/* Two Column Grid - CTA Box Width */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-2 mb-2">
-              <div className="relative h-[640px]">
+          {/* Two Column Grid */}
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 mb-1 sm:mb-2">
+              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px]">
                 <OptimizedImage
                   src={project.galleryImages[2]}
                   alt={`${project.hoverName} - Gallery Image 2`}
                   fill
                   className="object-cover"
                   quality="high"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative h-[640px]">
+              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px]">
                 <OptimizedImage
                   src={project.galleryImages[3]}
                   alt={`${project.hoverName} - Gallery Image 3`}
                   fill
                   className="object-cover"
                   quality="high"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -151,7 +161,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 height={1080}
                 className="w-full h-auto object-cover"
                 quality="high"
-                sizes="(max-width: 1280px) 100vw, 1280px"
+                sizes="100vw"
               />
             </div>
           </div>
