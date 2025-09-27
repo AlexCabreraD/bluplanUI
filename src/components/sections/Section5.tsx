@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Divider from "@/components/ui/Divider";
 
 export default function Section5() {
@@ -14,9 +16,11 @@ export default function Section5() {
               Let&apos;s design your future—stress-free. Reach out today for a free consultation.
             </p>
 
-            <button className="bg-transparent border-2 border-white text-white font-semibold px-6 sm:px-8 py-3 rounded-full hover:bg-white hover:text-[#009ce0] transition-all duration-300 ease-in-out text-base sm:text-lg cursor-pointer w-full sm:w-auto">
-              Get a Quote
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-transparent border-2 border-white text-white font-semibold px-6 sm:px-8 py-3 rounded-full hover:bg-white hover:text-[#009ce0] transition-all duration-300 ease-in-out text-base sm:text-lg cursor-pointer w-full sm:w-auto">
+                Get a Quote
+              </button>
+            </Link>
           </div>
         </div>
       </section>

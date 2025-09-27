@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import Divider from "@/components/ui/Divider";
@@ -97,14 +98,14 @@ export default function FloorPlansSection({
 
           {showViewAllButton && (
             <div className="inline-block relative group">
-              <a
+              <Link
                 href="/floor-plans"
                 className="text-black font-semibold text-sm sm:text-[14px] sm:leading-[24px] inline-flex items-center gap-2 pb-1 relative"
               >
                 See All Floor Plans
                 <span className="text-base sm:text-lg">→</span>
                 <div className="absolute bottom-0 left-0 h-[2px] bg-[#009ce0] w-0 group-hover:w-full transition-all duration-300 ease-out"></div>
-              </a>
+              </Link>
             </div>
           )}
         </div>

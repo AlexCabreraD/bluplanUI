@@ -4,29 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Divider from "@/components/ui/Divider";
+import { getHomeProjects } from "@/lib/data";
 
-const homeProjects = [
-  {
-    id: "project1",
-    title: "39th Street",
-    image: "/images/home/gallery/BP-Web-Home-Projects1.png",
-  },
-  {
-    id: "project2",
-    title: "North G Street",
-    image: "/images/home/gallery/BP-Web-Home-Projects2.png",
-  },
-  {
-    id: "project3",
-    title: "Dean Dr",
-    image: "/images/home/gallery/BP-Web-Home-Projects3.png",
-  },
-  {
-    id: "project1",
-    title: "Excepteur occaecat",
-    image: "/images/home/gallery/BP-Web-Home-Projects4.png",
-  },
-];
+// Get projects from centralized data
+const homeProjects = getHomeProjects();
 
 // Duplicate projects for scroll effect
 const displayProjects = [...homeProjects, ...homeProjects];
@@ -50,6 +31,11 @@ export default function Section4() {
               WebkitOverflowScrolling: "touch",
               paddingLeft: "max(1rem, calc((100vw - 1280px) / 2 + 1rem))",
             }}
+            ref={slider => {
+              if (slider) {
+                (slider as any).hasMoved = false;
+              }
+            }}
             onMouseDown={e => {
               const slider = e.currentTarget;
               const startX = e.pageX - slider.offsetLeft;
@@ -59,6 +45,7 @@ export default function Section4() {
               const handleMouseMove = (e: MouseEvent) => {
                 if (!isDown) return;
                 e.preventDefault();
+                (slider as any).hasMoved = true;
                 const x = e.pageX - slider.offsetLeft;
                 const walk = (x - startX) * 0.5;
                 slider.scrollLeft = scrollLeft - walk;
@@ -68,9 +55,15 @@ export default function Section4() {
                 isDown = false;
                 document.removeEventListener("mousemove", handleMouseMove);
                 document.removeEventListener("mouseup", handleMouseUp);
+
+                // Reset hasMoved after a small delay to allow click events
+                setTimeout(() => {
+                  (slider as any).hasMoved = false;
+                }, 100);
               };
 
               isDown = true;
+              (slider as any).hasMoved = false;
               document.addEventListener("mousemove", handleMouseMove);
               document.addEventListener("mouseup", handleMouseUp);
             }}
@@ -80,6 +73,15 @@ export default function Section4() {
                 key={index}
                 href={`/projects/${project.id}`}
                 className="relative flex-shrink-0 w-[280px] sm:w-[320px] md:w-[373px] min-w-[200px] h-[380px] sm:h-[440px] md:h-[507px] group overflow-hidden block"
+                onDragStart={e => e.preventDefault()}
+                onClick={e => {
+                  // Check if this was a drag operation by looking at the slider's state
+                  const slider = e.currentTarget.parentElement;
+                  if (slider && (slider as any).hasMoved) {
+                    e.preventDefault();
+                    return false;
+                  }
+                }}
               >
                 <Image
                   src={project.image}

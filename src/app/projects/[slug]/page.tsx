@@ -43,18 +43,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <div className="max-w-[832px] mx-auto">
                 <div className="bg-white px-[60px] pt-[40px] pb-[60px]">
                   {/* Project Title */}
-                  <h1 className="text-5xl font-bold text-black mb-2">39th Street</h1>
-                  <p className="text-base text-gray-700 mb-8">City, ST</p>
+                  <h1 className="text-5xl font-bold text-black mb-2">{project.hoverName}</h1>
+                  <p className="text-base text-gray-700 mb-8">{project.location}</p>
 
                   {/* Practice and Services Line */}
                   <div className="flex items-start gap-x-16 mb-8">
                     <div className="text-sm text-gray-700">
-                      <span className="font-semibold text-gray-900">Practice</span> — Lorem Ipsum
+                      <span className="font-semibold text-gray-900">Category</span> —{" "}
+                      {project.category || "Residential"}
                     </div>
-                    <div className="text-sm text-gray-700">
-                      <span className="font-semibold text-gray-900">Services</span> — Lorem Ipsum,
-                      Lorem Ipsum
-                    </div>
+                    {project.services && (
+                      <div className="text-sm text-gray-700">
+                        <span className="font-semibold text-gray-900">Services</span> —{" "}
+                        {project.services.join(", ")}
+                      </div>
+                    )}
                   </div>
 
                   {/* Divider Line */}
@@ -62,11 +65,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                   {/* Description */}
                   <p className="text-base text-gray-700 leading-relaxed mb-12">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.
+                    {project.description}
                   </p>
 
                   {/* Divider Line */}
@@ -74,13 +73,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                   {/* Features Section */}
                   <div>
-                    <h3 className="text-base font-semibold text-gray-900 mb-8">Features</h3>
-                    <div className="flex items-center gap-x-12">
+                    <h3 className="text-base font-semibold text-gray-900 mb-8">Specifications</h3>
+                    <div className="flex items-center gap-x-12 mb-8">
                       <FeatureIcon type="bed" value={project.bedrooms} label="Bed" />
                       <FeatureIcon type="bath" value={project.bathrooms} label="Bath" />
                       <FeatureIcon type="sqft" value={project.sqft} label="ft²" />
-                      <FeatureIcon type="story" value={2} label="Story" />
+                      {project.stories && (
+                        <FeatureIcon type="story" value={project.stories} label="Story" />
+                      )}
                     </div>
+
+                    {/* Project Features */}
+                    {project.features && project.features.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-900 mb-4">Key Features</h4>
+                        <ul className="text-sm text-gray-700 space-y-2">
+                          {project.features.map((feature, index) => (
+                            <li key={`feature-${index}`} className="flex items-center">
+                              <span className="w-1.5 h-1.5 bg-[#009ce0] rounded-full mr-3 flex-shrink-0"></span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

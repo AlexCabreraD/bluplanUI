@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Divider from "@/components/ui/Divider";
 
 const services = [
@@ -44,9 +46,10 @@ export default function Section2() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="group bg-white border border-gray-200 hover:border-[#009ce0]/50 hover:bg-[#009ce0] hover:shadow-xl rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2"
+                href="/services"
+                className="group bg-white border border-gray-200 hover:border-[#009ce0]/50 hover:bg-[#009ce0] hover:shadow-xl rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 block cursor-pointer"
               >
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-white mb-3 transition-colors duration-300">
                   {service.title}
@@ -54,7 +57,7 @@ export default function Section2() {
                 <p className="text-sm sm:text-base text-gray-600 group-hover:text-white leading-relaxed transition-colors duration-300">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

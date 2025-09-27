@@ -8,6 +8,7 @@ export interface Project {
   bathrooms: number;
   sqft: number;
   cars: number;
+  stories?: number;
   image: string;
   hoverName: string;
   hoverAddress: string;
@@ -15,6 +16,11 @@ export interface Project {
   description: string;
   heroImage: string;
   galleryImages: string[];
+  category?: string;
+  status?: string;
+  year?: number;
+  features?: string[];
+  services?: string[];
 }
 
 export interface HomeProject {
