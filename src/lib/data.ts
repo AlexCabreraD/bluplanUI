@@ -1,164 +1,206 @@
 import type { Project, HomeProject, FAQ } from "@/types";
 
 /**
- * Projects data - centralized source of truth
+ * ========================================
+ * PROJECTS DATA - CENTRALIZED SOURCE OF TRUTH
+ * ========================================
+ *
+ * EDITING GUIDE:
+ * 1. To add a new project: Copy an existing project object and modify all fields
+ * 2. To remove a project: Delete the entire project object
+ * 3. To edit content: Update the text fields below (title, description, features, etc.)
+ * 4. Project images are located in: /public/images/projects/[project-name]/
+ *
+ * NOTE: This is a temporary solution. Eventually this will be managed via CRM.
  */
 export const projects: Project[] = [
+  // ========================================
+  // PROJECT 1: 39th Street Residence
+  // ========================================
   {
-    id: "modern-2br-adu",
-    title: "Modern 2BR ADU",
-    subtitle: "Sleek accessory dwelling unit",
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 800,
-    cars: 1,
-    stories: 1,
-    image: "/images/home/gallery/BP-Web-Home-Projects1.png",
-    hoverName: "Modern 2BR ADU",
-    hoverAddress: "Backyard Addition, Portland, OR",
-    location: "Portland, OR",
-    description:
-      "A contemporary accessory dwelling unit featuring an open-concept design, modern finishes, and efficient use of space. Perfect for rental income or multi-generational living with sustainable design elements and smart home technology integration.",
-    heroImage: "/images/projects/hero/39th-street-hero.png",
-    galleryImages: [
-      "/images/home/gallery/BP-Web-Home-Projects1.png",
-      "/images/projects/gallery/39th-street-bedroom.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-      "/images/home/gallery/BP-Web-Home-Projects1.png",
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-    ],
-    category: "ADU",
-    status: "Built",
-    year: 2024,
-    features: [
-      "Open concept living",
-      "Energy efficient design",
-      "Modern kitchen",
-      "Private entrance",
-    ],
-    services: ["Custom Design", "Permit Management", "3D Modeling"],
-  },
-  {
-    id: "craftsman-3br-home",
-    title: "Craftsman 3BR Home",
-    subtitle: "Classic family residence",
+    id: "thirty-nine-street",
+    title: "39th Street Residence",
+    subtitle: "Modern urban living",
+
+    // EDIT: Project specifications
     bedrooms: 3,
     bathrooms: 2,
     sqft: 1850,
     cars: 2,
-    stories: 1,
-    image: "/images/home/gallery/BP-Web-Home-Projects2.png",
-    hoverName: "Craftsman Family Home",
-    hoverAddress: "Maple Street, Seattle, WA",
-    location: "Seattle, WA",
-    description:
-      "A beautifully designed craftsman-style home with traditional details and modern amenities. Features include hardwood floors, built-in cabinetry, and a spacious kitchen that seamlessly blends classic charm with contemporary functionality.",
-    heroImage: "/images/projects/hero/39th-street-hero.png",
+    stories: 2,
+
+    // EDIT: Images (first image is the thumbnail shown on cards)
+    image: "/images/projects/thirty-nine/thirty-nine-1.jpg",
+    heroImage: "/images/projects/thirty-nine/thirty-nine-1.jpg",
     galleryImages: [
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-      "/images/projects/gallery/39th-street-bedroom.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-      "/images/home/gallery/BP-Web-Home-Projects1.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
+      "/images/projects/thirty-nine/thirty-nine-1.jpg",
+      "/images/projects/thirty-nine/thirty-nine-2.jpg",
+      "/images/projects/thirty-nine/thirty-nine-3.jpg",
+      "/images/projects/thirty-nine/thirty-nine-4.jpg",
+      "/images/projects/thirty-nine/thirty-nine-5.jpg",
     ],
-    category: "Single Family",
+
+    // EDIT: Display information
+    hoverName: "39th Street Residence",
+    hoverAddress: "39th Street, Portland, OR",
+    location: "Portland, OR",
+
+    // EDIT: Project details
+    category: "Residential",
     status: "Built",
-    year: 2023,
-    features: ["Craftsman details", "Hardwood floors", "Built-in storage", "Covered front porch"],
-    services: ["Custom Design", "Construction Documents", "Feasibility Study"],
-  },
-  {
-    id: "urban-1br-loft",
-    title: "Urban 1BR Loft",
-    subtitle: "Downtown living redefined",
-    bedrooms: 1,
-    bathrooms: 1,
-    sqft: 650,
-    cars: 0,
-    stories: 1,
-    image: "/images/home/gallery/BP-Web-Home-Projects3.png",
-    hoverName: "Urban Loft",
-    hoverAddress: "Downtown District, San Francisco, CA",
-    location: "San Francisco, CA",
-    description:
-      "A sleek urban loft designed for city living. Features floor-to-ceiling windows, modern appliances, and smart storage solutions to maximize the compact space while maintaining a luxurious feel in the heart of the city.",
-    heroImage: "/images/projects/hero/39th-street-hero.png",
-    galleryImages: [
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-      "/images/projects/gallery/39th-street-bedroom.png",
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-      "/images/home/gallery/BP-Web-Home-Projects1.png",
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-    ],
-    category: "Urban",
-    status: "In Progress",
     year: 2024,
-    features: ["Floor-to-ceiling windows", "Smart storage", "Modern appliances", "City views"],
-    services: ["Custom Design", "3D Modeling", "Permit Management"],
+
+    // EDIT: Project description (shown on detail page)
+    description:
+      "A thoughtfully designed modern residence featuring clean lines, abundant natural light, and an open floor plan. This home seamlessly blends contemporary aesthetics with functional living spaces, creating an ideal environment for modern family life.",
+
+    // EDIT: Key features (bullet points shown on detail page)
+    features: [
+      "Open concept living area",
+      "Natural light throughout",
+      "Modern finishes",
+      "Spacious bedrooms",
+      "Contemporary design",
+    ],
+
+    // EDIT: Services provided
+    services: ["Custom Design", "Construction Documents", "3D Modeling"],
   },
+
+  // ========================================
+  // PROJECT 2: Dean Street Home
+  // ========================================
   {
-    id: "luxury-4br-estate",
-    title: "Luxury 4BR Estate",
-    subtitle: "Elegant family compound",
+    id: "dean-street",
+    title: "Dean Street Home",
+    subtitle: "Contemporary family residence",
+
+    // EDIT: Project specifications
     bedrooms: 4,
     bathrooms: 3,
-    sqft: 3200,
-    cars: 3,
+    sqft: 2400,
+    cars: 2,
     stories: 2,
-    image: "/images/home/gallery/BP-Web-Home-Projects4.png",
-    hoverName: "Luxury Estate",
-    hoverAddress: "Hill View Drive, Austin, TX",
-    location: "Austin, TX",
-    description:
-      "An expansive luxury home featuring high-end finishes, multiple living areas, and outdoor entertainment spaces. Designed for those who appreciate both comfort and style, with attention to every detail from the grand foyer to the resort-style backyard.",
-    heroImage: "/images/projects/hero/39th-street-hero.png",
+
+    // EDIT: Images (first image is the thumbnail shown on cards)
+    image: "/images/projects/dean/dean-4.jpg",
+    heroImage: "/images/projects/dean/dean-1.jpg",
     galleryImages: [
-      "/images/home/gallery/BP-Web-Home-Projects4.png",
-      "/images/projects/gallery/39th-street-bedroom.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
-      "/images/home/gallery/BP-Web-Home-Projects1.png",
-      "/images/home/gallery/BP-Web-Home-Projects2.png",
-      "/images/home/gallery/BP-Web-Home-Projects3.png",
+      "/images/projects/dean/dean-1.jpg",
+      "/images/projects/dean/dean-2.jpg",
+      "/images/projects/dean/dean-3.jpg",
+      "/images/projects/dean/dean-4.jpg",
+      "/images/projects/dean/dean-5.jpg",
     ],
-    category: "Luxury",
+
+    // EDIT: Display information
+    hoverName: "Dean Street Home",
+    hoverAddress: "Dean Street, Portland, OR",
+    location: "Portland, OR",
+
+    // EDIT: Project details
+    category: "Residential",
+    status: "Built",
+    year: 2024,
+
+    // EDIT: Project description (shown on detail page)
+    description:
+      "A spacious contemporary home designed for modern family living. This residence features thoughtful layouts, quality finishes, and versatile spaces that adapt to the needs of a growing family while maintaining a cohesive aesthetic throughout.",
+
+    // EDIT: Key features (bullet points shown on detail page)
+    features: [
+      "Spacious family layout",
+      "Quality craftsmanship",
+      "Flexible living spaces",
+      "Modern amenities",
+      "Efficient floor plan",
+    ],
+
+    // EDIT: Services provided
+    services: ["Custom Design", "Permit Management", "Construction Documents"],
+  },
+
+  // ========================================
+  // PROJECT 3: Murray Street Residence
+  // ========================================
+  {
+    id: "murray-street",
+    title: "Murray Street Residence",
+    subtitle: "Elegant modern design",
+
+    // EDIT: Project specifications
+    bedrooms: 3,
+    bathrooms: 2,
+    sqft: 2100,
+    cars: 2,
+    stories: 1,
+
+    // EDIT: Images (first image is the thumbnail shown on cards)
+    image: "/images/projects/murray/murray-1.jpg",
+    heroImage: "/images/projects/murray/murray-1.jpg",
+    galleryImages: [
+      "/images/projects/murray/murray-1.jpg",
+      "/images/projects/murray/murray-2.jpg",
+      "/images/projects/murray/murray-3.jpg",
+      "/images/projects/murray/murray-4.jpg",
+      "/images/projects/murray/murray-5.png",
+      "/images/projects/murray/murray-6.png",
+    ],
+
+    // EDIT: Display information
+    hoverName: "Murray Street Residence",
+    hoverAddress: "Murray Street, Portland, OR",
+    location: "Portland, OR",
+
+    // EDIT: Project details
+    category: "Residential",
     status: "Built",
     year: 2023,
+
+    // EDIT: Project description (shown on detail page)
+    description:
+      "An elegant single-story residence that emphasizes comfort and style. Designed with attention to detail, this home offers a perfect balance of private and communal spaces, ideal for both everyday living and entertaining.",
+
+    // EDIT: Key features (bullet points shown on detail page)
     features: [
-      "High-end finishes",
-      "Multiple living areas",
-      "Outdoor entertainment",
-      "Master suite",
+      "Single-story convenience",
+      "Elegant design details",
+      "Indoor-outdoor flow",
+      "Premium finishes",
+      "Thoughtful layout",
     ],
-    services: ["Custom Design", "Construction Documents", "3D Modeling", "Permit Management"],
+
+    // EDIT: Services provided
+    services: ["Custom Design", "3D Modeling", "Permit Management", "Construction Documents"],
   },
 ];
 
 /**
- * Home page projects - derived from main projects data
+ * ========================================
+ * HOME PAGE PROJECTS
+ * ========================================
+ *
+ * These are shown in the scrolling carousel on the home page.
+ * They are automatically derived from the main projects array above.
+ *
+ * EDITING: To change what shows on the home page, edit the main
+ * projects array above. These will update automatically.
  */
 export const homeProjects: HomeProject[] = [
   {
-    id: "modern-2br-adu",
-    title: "Modern 2BR ADU",
-    image: "/images/home/gallery/BP-Web-Home-Projects1.png",
+    id: "thirty-nine-street",
+    title: "39th Street Residence",
+    image: "/images/projects/thirty-nine/thirty-nine-1.jpg",
   },
   {
-    id: "craftsman-3br-home",
-    title: "Craftsman Family Home",
-    image: "/images/home/gallery/BP-Web-Home-Projects2.png",
+    id: "dean-street",
+    title: "Dean Street Home",
+    image: "/images/projects/dean/dean-3.jpg",
   },
   {
-    id: "urban-1br-loft",
-    title: "Urban Loft",
-    image: "/images/home/gallery/BP-Web-Home-Projects3.png",
-  },
-  {
-    id: "luxury-4br-estate",
-    title: "Luxury Estate",
-    image: "/images/home/gallery/BP-Web-Home-Projects4.png",
+    id: "murray-street",
+    title: "Murray Street Residence",
+    image: "/images/projects/murray/murray-2.jpg",
   },
 ];
 

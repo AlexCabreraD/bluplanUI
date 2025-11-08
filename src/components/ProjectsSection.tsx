@@ -15,13 +15,13 @@ export default function ProjectsSection() {
               href={`/projects/${project.id}`}
               className="bg-white group cursor-pointer block"
             >
-              <div className="mb-3 sm:mb-4 relative overflow-hidden">
+              <div className="mb-3 sm:mb-4 relative overflow-hidden h-[250px] sm:h-[280px] md:h-[300px] bg-gray-100">
                 <OptimizedImage
                   src={project.image}
                   alt={`${project.title} project`}
                   width={400}
                   height={300}
-                  className="w-full h-auto"
+                  className="w-full h-full object-cover object-center"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end text-white p-4 sm:p-6">

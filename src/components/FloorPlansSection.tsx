@@ -40,6 +40,11 @@ export default function FloorPlansSection({
       filtered = filtered.filter(plan => filters.bedrooms.includes(plan.bedrooms));
     }
 
+    // Filter by baths
+    if (filters.baths.length > 0) {
+      filtered = filtered.filter(plan => filters.baths.includes(plan.bathrooms));
+    }
+
     setFilteredPlans(filtered);
   };
 

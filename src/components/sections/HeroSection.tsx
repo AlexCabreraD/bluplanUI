@@ -7,15 +7,15 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/home/hero/HOME-PAGE-VIDEO_ITSADU 1.png"
-          alt="Construction site with wooden framing and building materials"
+          alt="BluPlan Studio Hero"
           fill
-          className="object-cover object-center"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50 sm:bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50 sm:bg-black/40 z-20"></div>
       </div>
 
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-30 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl">
             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">

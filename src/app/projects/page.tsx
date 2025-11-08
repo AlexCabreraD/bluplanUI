@@ -9,7 +9,7 @@ export default function Projects() {
     <PageLayout>
       <PageHero
         title="Projects"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        subtitle="Explore our portfolio of thoughtfully designed residential projects that blend innovation, functionality, and architectural excellence."
         imageSrc="/images/projects/hero/projectsHero.jpg"
         imageAlt="Innovative residential projects and modern architectural designs"
       />

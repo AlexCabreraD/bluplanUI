@@ -42,6 +42,7 @@ next-env.d.ts
 
 #
 .claude
+/public/temp
 
 #temp files
 .Identifier

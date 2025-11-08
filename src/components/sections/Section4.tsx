@@ -86,10 +86,11 @@ export default function Section4() {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  width={373}
-                  height={507}
-                  className="w-full h-full object-cover select-none pointer-events-none"
+                  fill
+                  unoptimized
+                  className="object-cover object-center select-none pointer-events-none"
                   draggable={false}
+                  priority={index < 3}
                 />
 
                 {/* Black overlay that fades on hover */}

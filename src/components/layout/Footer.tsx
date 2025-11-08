@@ -40,7 +40,7 @@ export default function Footer() {
                     <Phone size={16} className="sm:size-[18px] text-[#009ce0]" />
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-base sm:text-lg">(619) 960-2060</p>
+                    <p className="text-white font-semibold text-base sm:text-lg">(619) 830-8110</p>
                     <p className="text-gray-400 text-xs sm:text-sm">Call us today</p>
                   </div>
                 </div>

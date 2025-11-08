@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import ServicesCTA from "@/components/ServicesCTA";
@@ -112,57 +113,74 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        {/* Full-Width Image Gallery */}
-        <section className="bg-white">
-          {/* Large Single Image */}
-          <div className="relative w-full mb-1 sm:mb-2">
-            <OptimizedImage
-              src={project.galleryImages[1]}
-              alt={`${project.hoverName} - Gallery Image 1`}
-              width={1920}
-              height={1080}
-              className="w-full h-auto object-cover"
-              quality="high"
-              sizes="100vw"
-            />
-          </div>
-
-          {/* Two Column Grid */}
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 mb-1 sm:mb-2">
-              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px]">
-                <OptimizedImage
+        {/* Artistic Gallery Section */}
+        <section className="bg-white py-12 sm:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Gallery Grid - Asymmetric Layout */}
+            <div className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6">
+              {/* Row 1: Large feature image spanning 8 cols + smaller image 4 cols */}
+              <div className="col-span-12 md:col-span-8 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden group">
+                <Image
+                  src={project.galleryImages[1]}
+                  alt={`${project.hoverName} - Detail 1`}
+                  fill
+                  unoptimized
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="col-span-12 md:col-span-4 relative h-[250px] sm:h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden group">
+                <Image
                   src={project.galleryImages[2]}
-                  alt={`${project.hoverName} - Gallery Image 2`}
+                  alt={`${project.hoverName} - Detail 2`}
                   fill
-                  className="object-cover"
-                  quality="high"
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                  unoptimized
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px]">
-                <OptimizedImage
-                  src={project.galleryImages[3]}
-                  alt={`${project.hoverName} - Gallery Image 3`}
-                  fill
-                  className="object-cover"
-                  quality="high"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
-            </div>
 
-            {/* Final Image - Full Size */}
-            <div className="relative w-full">
-              <OptimizedImage
-                src={project.galleryImages[4]}
-                alt={`${project.hoverName} - Gallery Image 4`}
-                width={1920}
-                height={1080}
-                className="w-full h-auto object-cover"
-                quality="high"
-                sizes="100vw"
-              />
+              {/* Row 2: Two equal images */}
+              <div className="col-span-12 sm:col-span-6 relative h-[280px] sm:h-[350px] lg:h-[450px] overflow-hidden group">
+                <Image
+                  src={project.galleryImages[3]}
+                  alt={`${project.hoverName} - Detail 3`}
+                  fill
+                  unoptimized
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="col-span-12 sm:col-span-6 relative h-[280px] sm:h-[350px] lg:h-[450px] overflow-hidden group">
+                <Image
+                  src={project.galleryImages[4]}
+                  alt={`${project.hoverName} - Detail 4`}
+                  fill
+                  unoptimized
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Row 3: Additional images if available */}
+              {project.galleryImages[5] && (
+                <div className="col-span-12 md:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[400px] overflow-hidden group">
+                  <Image
+                    src={project.galleryImages[5]}
+                    alt={`${project.hoverName} - Detail 5`}
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              {project.galleryImages[6] && (
+                <div className="col-span-12 md:col-span-7 relative h-[250px] sm:h-[320px] lg:h-[400px] overflow-hidden group">
+                  <Image
+                    src={project.galleryImages[6]}
+                    alt={`${project.hoverName} - Detail 6`}
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>

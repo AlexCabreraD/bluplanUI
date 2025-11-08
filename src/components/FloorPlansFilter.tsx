@@ -6,6 +6,7 @@ import { useState } from "react";
 interface FilterState {
   sizes: string[];
   bedrooms: number[];
+  baths: number[];
 }
 
 interface FloorPlansFilterProps {
@@ -16,15 +17,18 @@ export default function FloorPlansFilter({ onFilterChange }: FloorPlansFilterPro
   const [filters, setFilters] = useState<FilterState>({
     sizes: [],
     bedrooms: [],
+    baths: [],
   });
 
   const [openSections, setOpenSections] = useState({
     size: true,
     bedrooms: true,
+    baths: true,
   });
 
   const sizes = ["Light", "Medium", "Small", "Compact"];
   const bedroomOptions = [1, 2, 3];
+  const bathOptions = [1, 2];
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections(prev => ({
@@ -53,13 +57,25 @@ export default function FloorPlansFilter({ onFilterChange }: FloorPlansFilterPro
     onFilterChange(newFilters);
   };
 
-  const clearFilters = (section: "sizes" | "bedrooms") => {
+  const handleBathToggle = (bath: number) => {
+    const newBaths = filters.baths.includes(bath)
+      ? filters.baths.filter(b => b !== bath)
+      : [...filters.baths, bath];
+
+    const newFilters = { ...filters, baths: newBaths };
+    setFilters(newFilters);
+    onFilterChange(newFilters);
+  };
+
+  const clearFilters = (section: "sizes" | "bedrooms" | "baths") => {
     const newFilters = { ...filters };
 
     if (section === "sizes") {
       newFilters.sizes = [];
     } else if (section === "bedrooms") {
       newFilters.bedrooms = [];
+    } else if (section === "baths") {
+      newFilters.baths = [];
     }
 
     setFilters(newFilters);
@@ -147,6 +163,49 @@ export default function FloorPlansFilter({ onFilterChange }: FloorPlansFilterPro
             {filters.bedrooms.length > 0 && (
               <button
                 onClick={() => clearFilters("bedrooms")}
+                className="text-xs sm:text-sm text-[#009ce0] hover:underline"
+              >
+                ✕ Clear
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Baths Filter */}
+      <div className="mb-4 sm:mb-6">
+        <button
+          onClick={() => toggleSection("baths")}
+          className="flex items-center justify-between w-full text-left"
+        >
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">Baths</h3>
+          <ChevronDown
+            className={`w-5 h-5 transition-transform duration-200 ${
+              openSections.baths ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {openSections.baths && (
+          <div className="mt-3 sm:mt-4 space-y-3">
+            <div className="flex gap-2">
+              {bathOptions.map(bath => (
+                <button
+                  key={bath}
+                  onClick={() => handleBathToggle(bath)}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg text-xs sm:text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                    filters.baths.includes(bath)
+                      ? "bg-[#009ce0] text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {bath}
+                </button>
+              ))}
+            </div>
+            {filters.baths.length > 0 && (
+              <button
+                onClick={() => clearFilters("baths")}
                 className="text-xs sm:text-sm text-[#009ce0] hover:underline"
               >
                 ✕ Clear

@@ -45,13 +45,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white pt-8 pb-16 sm:pt-10 sm:pb-20 lg:py-16 xl:py-20 2xl:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start">
           {/* Left Side - Contact Information */}
           <div className="space-y-6">
             <div>
-              <h2 className="font-bold text-[#009ce0] leading-tight" style={{ fontSize: "32px" }}>
+              <h2 className="font-bold text-[#009ce0] leading-tight text-xl sm:text-2xl lg:text-3xl xl:text-[32px]">
                 Send us a message
                 <br />
                 or call us.
@@ -74,8 +74,8 @@ export default function ContactForm() {
                     />
                   </svg>
                 </div>
-                <span className="text-gray-800" style={{ fontSize: "28px" }}>
-                  (619) 960-2060
+                <span className="text-gray-800 text-lg sm:text-xl lg:text-2xl xl:text-[28px]">
+                  (619) 830-8110
                 </span>
               </div>
 
@@ -91,7 +91,7 @@ export default function ContactForm() {
                     <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
                   </svg>
                 </div>
-                <span className="text-gray-800" style={{ fontSize: "28px" }}>
+                <span className="text-gray-800 text-lg sm:text-xl lg:text-2xl xl:text-[28px]">
                   admin@bluplanstudio.com
                 </span>
               </div>
@@ -111,7 +111,7 @@ export default function ContactForm() {
                     />
                   </svg>
                 </div>
-                <div className="text-gray-800 leading-relaxed" style={{ fontSize: "28px" }}>
+                <div className="text-gray-800 leading-relaxed text-lg sm:text-xl lg:text-2xl xl:text-[28px]">
                   <div>1223 3rd Ave</div>
                   <div>Suite F and E,</div>
                   <div>Chula Vista, CA 91911</div>
@@ -124,7 +124,7 @@ export default function ContactForm() {
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name and Email Row */}
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <input
                     type="text"
@@ -150,7 +150,7 @@ export default function ContactForm() {
               </div>
 
               {/* Phone and Service Type Row */}
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <input
                     type="tel"
@@ -208,11 +208,10 @@ export default function ContactForm() {
               </div>
 
               {/* Submit Button */}
-              <div className="flex justify-end pt-6">
+              <div className="flex justify-center sm:justify-end pt-6">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-transparent border-0 text-black font-medium group relative pb-1 cursor-pointer"
-                  style={{ fontSize: "20px" }}
+                  className="inline-flex items-center gap-2 bg-transparent border-0 text-black font-medium group relative pb-1 cursor-pointer text-lg sm:text-xl"
                 >
                   <span>Send Message</span>
                   <span className="transform group-hover:translate-x-1 transition-transform duration-200 font-bold text-xl leading-none flex items-center">
