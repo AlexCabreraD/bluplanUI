@@ -2,7 +2,7 @@
 
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 
 interface ImageViewerProps {
   images: string[];
@@ -20,24 +20,23 @@ export default function ImageViewer({
   altPrefix = "Image",
 }: ImageViewerProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [isLoading, setIsLoading] = useState(true);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
 
   const minSwipeDistance = 50;
 
   const goToNext = useCallback(() => {
-    setIsLoading(true);
     setCurrentIndex(prev => (prev + 1) % images.length);
   }, [images.length]);
 
   const goToPrevious = useCallback(() => {
-    setIsLoading(true);
     setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
   useEffect(() => {
     setCurrentIndex(initialIndex);
+    setLoadedImages(new Set([initialIndex]));
   }, [initialIndex]);
 
   useEffect(() => {
@@ -55,7 +54,7 @@ export default function ImageViewer({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, currentIndex, onClose, goToPrevious, goToNext]);
+  }, [isOpen, onClose, goToPrevious, goToNext]);
 
   useEffect(() => {
     if (isOpen) {
@@ -69,19 +68,40 @@ export default function ImageViewer({
     };
   }, [isOpen]);
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
+  useEffect(() => {
+    if (!isOpen) return;
 
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
+    const preloadImage = (index: number) => {
+      if (index >= 0 && index < images.length && images[index]) {
+        const img = new window.Image();
+        img.src = images[index];
+      }
+    };
 
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    const nextIndex = (currentIndex + 1) % images.length;
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
 
-    const distance = touchStart - touchEnd;
+    preloadImage(nextIndex);
+    preloadImage(prevIndex);
+  }, [currentIndex, images, isOpen]);
+
+  const handleImageLoad = useCallback((index: number) => {
+    setLoadedImages(prev => new Set(prev).add(index));
+  }, []);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchEndRef.current = null;
+    touchStartRef.current = e.targetTouches[0].clientX;
+  }, []);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  }, []);
+
+  const onTouchEnd = useCallback(() => {
+    if (!touchStartRef.current || !touchEndRef.current) return;
+
+    const distance = touchStartRef.current - touchEndRef.current;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
@@ -90,21 +110,24 @@ export default function ImageViewer({
     } else if (isRightSwipe) {
       goToPrevious();
     }
-  };
+  }, [goToNext, goToPrevious, minSwipeDistance]);
 
   if (!isOpen) return null;
 
   const currentImage = images[currentIndex];
   if (!currentImage) return null;
 
+  const isCurrentImageLoaded = loadedImages.has(currentIndex);
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
       onClick={onClose}
+      style={{ willChange: "opacity" }}
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2 text-white hover:bg-white/10 rounded-full transition-colors duration-200"
+        className="absolute top-4 right-4 z-50 p-2 text-white hover:bg-white/10 rounded-full transition-colors duration-150"
         aria-label="Close image viewer"
       >
         <X size={32} />
@@ -120,7 +143,7 @@ export default function ImageViewer({
             e.stopPropagation();
             goToPrevious();
           }}
-          className="absolute left-4 z-50 p-3 text-white hover:bg-white/10 rounded-full transition-colors duration-200 hidden sm:block"
+          className="absolute left-4 z-50 p-3 text-white hover:bg-white/10 rounded-full transition-colors duration-150 hidden sm:block"
           aria-label="Previous image"
         >
           <ChevronLeft size={40} />
@@ -133,7 +156,7 @@ export default function ImageViewer({
             e.stopPropagation();
             goToNext();
           }}
-          className="absolute right-4 z-50 p-3 text-white hover:bg-white/10 rounded-full transition-colors duration-200 hidden sm:block"
+          className="absolute right-4 z-50 p-3 text-white hover:bg-white/10 rounded-full transition-colors duration-150 hidden sm:block"
           aria-label="Next image"
         >
           <ChevronRight size={40} />
@@ -147,13 +170,13 @@ export default function ImageViewer({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {isLoading && (
+        {!isCurrentImageLoaded && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
           </div>
         )}
 
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full" style={{ willChange: "transform" }}>
           <Image
             src={currentImage}
             alt={`${altPrefix} ${currentIndex + 1}`}
@@ -161,7 +184,8 @@ export default function ImageViewer({
             className="object-contain"
             quality={100}
             unoptimized
-            onLoad={() => setIsLoading(false)}
+            priority
+            onLoad={() => handleImageLoad(currentIndex)}
           />
         </div>
       </div>
