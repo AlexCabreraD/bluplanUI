@@ -27,7 +27,7 @@ export const projects: Project[] = [
     bathrooms: 2,
     sqft: 1850,
     cars: 2,
-    stories: 2,
+    stories: 1,
 
     // EDIT: Images (first image is the thumbnail shown on cards)
     image: "/images/projects/thirty-nine/thirty-nine-1.jpg",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     bathrooms: 3,
     sqft: 2400,
     cars: 2,
-    stories: 2,
+    stories: 1,
 
     // EDIT: Images (first image is the thumbnail shown on cards)
     image: "/images/projects/dean/dean-4.jpg",
