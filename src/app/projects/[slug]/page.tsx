@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
+import ProjectGallery from "@/components/ProjectGallery";
 import ServicesCTA from "@/components/ServicesCTA";
 import PageLayout from "@/components/layout/PageLayout";
 import ErrorBoundary from "@/components/ui/ErrorBoundary";
@@ -117,71 +117,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="bg-white py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Gallery Grid - Asymmetric Layout */}
-            <div className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6">
-              {/* Row 1: Large feature image spanning 8 cols + smaller image 4 cols */}
-              <div className="col-span-12 md:col-span-8 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden group">
-                <Image
-                  src={project.galleryImages[1]}
-                  alt={`${project.hoverName} - Detail 1`}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="col-span-12 md:col-span-4 relative h-[250px] sm:h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden group">
-                <Image
-                  src={project.galleryImages[2]}
-                  alt={`${project.hoverName} - Detail 2`}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Row 2: Two equal images */}
-              <div className="col-span-12 sm:col-span-6 relative h-[280px] sm:h-[350px] lg:h-[450px] overflow-hidden group">
-                <Image
-                  src={project.galleryImages[3]}
-                  alt={`${project.hoverName} - Detail 3`}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="col-span-12 sm:col-span-6 relative h-[280px] sm:h-[350px] lg:h-[450px] overflow-hidden group">
-                <Image
-                  src={project.galleryImages[4]}
-                  alt={`${project.hoverName} - Detail 4`}
-                  fill
-                  unoptimized
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Row 3: Additional images if available */}
-              {project.galleryImages[5] && (
-                <div className="col-span-12 md:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[400px] overflow-hidden group">
-                  <Image
-                    src={project.galleryImages[5]}
-                    alt={`${project.hoverName} - Detail 5`}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              )}
-              {project.galleryImages[6] && (
-                <div className="col-span-12 md:col-span-7 relative h-[250px] sm:h-[320px] lg:h-[400px] overflow-hidden group">
-                  <Image
-                    src={project.galleryImages[6]}
-                    alt={`${project.hoverName} - Detail 6`}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              )}
-            </div>
+            <ProjectGallery images={project.galleryImages} projectName={project.hoverName} />
           </div>
         </section>
 
