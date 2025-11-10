@@ -189,7 +189,10 @@ export default function Section4() {
         </div>
 
         {/* Custom Scrollbar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 lg:mb-12">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 lg:mb-12"
+          style={{ transform: "translateX(-8px)" }}
+        >
           <div className="relative h-2 bg-[#f1f1f1] rounded-full cursor-pointer select-none">
             <div
               className={`absolute top-0 h-2 bg-[#009ce0] rounded-full transition-colors select-none ${
