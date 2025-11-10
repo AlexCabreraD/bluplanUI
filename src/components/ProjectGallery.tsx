@@ -34,12 +34,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 1`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}
@@ -53,12 +51,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 2`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}
@@ -73,12 +69,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 3`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}
@@ -92,12 +86,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 4`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}
@@ -112,12 +104,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 5`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}
@@ -131,12 +121,10 @@ export default function ProjectGallery({ images, projectName }: ProjectGalleryPr
               alt={`${projectName} - Detail 6`}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
-                Click to view
-              </div>
+            <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-white text-sm font-medium">Click to view</div>
             </div>
           </div>
         )}

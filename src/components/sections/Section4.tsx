@@ -93,13 +93,8 @@ export default function Section4() {
                   priority={index < 3}
                 />
 
-                {/* Black overlay that fades on hover */}
-                <div
-                  className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500 ease-in-out pointer-events-none"
-                  style={{ background: "rgba(15, 20, 37, 0.7)" }}
-                ></div>
+                <div className="absolute inset-0 bg-transparent group-hover:bg-[rgba(15,20,37,0.5)] transition-all duration-500 ease-in-out pointer-events-none"></div>
 
-                {/* Title that appears on hover */}
                 <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out pointer-events-none">
                   <h3 className="text-xl sm:text-2xl md:text-[32px] md:leading-[38px] font-bold text-white select-none">
                     {project.title}

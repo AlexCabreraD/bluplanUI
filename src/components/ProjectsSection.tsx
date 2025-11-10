@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import OptimizedImage from "@/components/ui/OptimizedImage";
 import { projects } from "@/lib/data";
 import { formatNumber } from "@/lib/utils";
 
@@ -15,19 +15,16 @@ export default function ProjectsSection() {
               href={`/projects/${project.id}`}
               className="bg-white group cursor-pointer block"
             >
-              <div className="mb-3 sm:mb-4 relative overflow-hidden h-[250px] sm:h-[280px] md:h-[300px] bg-gray-100">
-                <OptimizedImage
+              <div className="mb-3 sm:mb-4 relative overflow-hidden h-[380px] sm:h-[440px] md:h-[507px] bg-gray-100">
+                <Image
                   src={project.image}
                   alt={`${project.title} project`}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  fill
+                  unoptimized
+                  className="object-cover object-center select-none pointer-events-none"
+                  draggable={false}
                 />
-                <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end text-white p-4 sm:p-6">
-                  <h4 className="text-lg sm:text-xl font-bold mb-1">{project.hoverName}</h4>
-                  <p className="text-xs sm:text-sm font-light">{project.hoverAddress}</p>
-                </div>
+                <div className="absolute inset-0 bg-[rgba(15,20,37,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div>
                 <h3 className="text-base sm:text-lg text-black mb-1">
