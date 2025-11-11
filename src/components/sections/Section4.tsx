@@ -5,15 +5,15 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
 import Divider from "@/components/ui/Divider";
-import { getHomeProjects } from "@/lib/data";
+import type { HomeProject } from "@/types";
 
-// Get projects from centralized data
-const homeProjects = getHomeProjects();
+interface Section4Props {
+  homeProjects: HomeProject[];
+}
 
-// Duplicate projects for scroll effect
-const displayProjects = [...homeProjects, ...homeProjects];
-
-export default function Section4() {
+export default function Section4({ homeProjects }: Section4Props) {
+  // Duplicate projects for scroll effect
+  const displayProjects = [...homeProjects, ...homeProjects];
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [thumbWidth, setThumbWidth] = useState(20);

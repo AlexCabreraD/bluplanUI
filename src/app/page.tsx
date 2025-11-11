@@ -6,8 +6,14 @@ import Section2 from "@/components/sections/Section2";
 import Section3 from "@/components/sections/Section3";
 import Section4 from "@/components/sections/Section4";
 import Section5 from "@/components/sections/Section5";
+import { sanityFeaturedProjectToHomeProject } from "@/lib/sanity-helpers";
 
-export default function Home() {
+import { getFeaturedProjects } from "../../sanity/lib/fetch";
+
+export default async function Home() {
+  const sanityFeaturedProjects = await getFeaturedProjects();
+  const homeProjects = sanityFeaturedProjects.map(sanityFeaturedProjectToHomeProject);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -16,7 +22,7 @@ export default function Home() {
         <Section1 />
         <Section2 />
         <Section3 />
-        <Section4 />
+        <Section4 homeProjects={homeProjects} />
         <Section5 />
       </main>
       <Footer />

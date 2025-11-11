@@ -28,9 +28,9 @@
       "      ${0}",
       "    </div>",
       "  );",
-      "}"
+      "}",
     ],
-    "description": "React component following best practices"
+    "description": "React component following best practices",
   },
   "Accordion Item Component": {
     "prefix": "accordion-item",
@@ -64,8 +64,8 @@
       "      {/* Content */}",
       "    </div>",
       "  </div>",
-      ");"
+      ");",
     ],
-    "description": "Accordion item component with accessibility"
-  }
+    "description": "Accordion item component with accessibility",
+  },
 }

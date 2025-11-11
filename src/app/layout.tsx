@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BluPlan Studio - Transforming Ideas into Ready-to-Build Spaces",
-  description: "We transform ideas into functional, personalized, and ready-to-build spaces. BluPlan Studio specializes in turning residential visions into fully detailed, ready to build projects with customized architectural solutions.",
+  description:
+    "We transform ideas into functional, personalized, and ready-to-build spaces. BluPlan Studio specializes in turning residential visions into fully detailed, ready to build projects with customized architectural solutions.",
 };
 
 export default function RootLayout({
@@ -24,11 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }

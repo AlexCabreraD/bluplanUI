@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { projects } from "@/lib/data";
+import { sanityProjectToProject } from "@/lib/sanity-helpers";
 import { formatNumber } from "@/lib/utils";
+import type { Project } from "@/types";
 
-export default function ProjectsSection() {
+import { getProjects } from "../../sanity/lib/fetch";
+
+export default async function ProjectsSection() {
+  const sanityProjects = await getProjects();
+  const projects: Project[] = sanityProjects.map(sanityProjectToProject);
+
   return (
     <section className="py-8 sm:py-12 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

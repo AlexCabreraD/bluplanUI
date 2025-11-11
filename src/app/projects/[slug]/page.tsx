@@ -6,17 +6,28 @@ import PageLayout from "@/components/layout/PageLayout";
 import ErrorBoundary from "@/components/ui/ErrorBoundary";
 import FeatureIcon from "@/components/ui/FeatureIcon";
 import OptimizedImage from "@/components/ui/OptimizedImage";
-import { getProjectById } from "@/lib/data";
+import { sanityProjectToProject } from "@/lib/sanity-helpers";
 import type { ProjectPageProps } from "@/types";
+
+import { getProjectBySlug, getProjectSlugs } from "../../../../sanity/lib/fetch";
+
+export async function generateStaticParams() {
+  const slugs = await getProjectSlugs();
+  return slugs.map((slug: string) => ({
+    slug,
+  }));
+}
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
 
-  const project = getProjectById(slug);
+  const sanityProject = await getProjectBySlug(slug);
 
-  if (!project) {
+  if (!sanityProject) {
     notFound();
   }
+
+  const project = sanityProjectToProject(sanityProject);
 
   return (
     <ErrorBoundary>

@@ -8,7 +8,7 @@ export interface FloorPlan {
   bathrooms: number;
   sqft: number;
   image: string;
-  size: 'Light' | 'Medium' | 'Small' | 'Compact';
+  size: "Light" | "Medium" | "Small" | "Compact";
 }
 
 const allFloorPlans: FloorPlan[] = [
@@ -20,7 +20,7 @@ const allFloorPlans: FloorPlan[] = [
     bathrooms: 1,
     sqft: 425,
     image: "/images/shared/floorplans/BP-Web-Home-Floor-Plans-Casita.png",
-    size: "Compact"
+    size: "Compact",
   },
   {
     id: "nook",
@@ -30,7 +30,7 @@ const allFloorPlans: FloorPlan[] = [
     bathrooms: 1,
     sqft: 425,
     image: "/images/shared/floorplans/BP-Web-Home-Floor-Plans-nook.png",
-    size: "Compact"
+    size: "Compact",
   },
   {
     id: "retreat",
@@ -40,7 +40,7 @@ const allFloorPlans: FloorPlan[] = [
     bathrooms: 1,
     sqft: 425,
     image: "/images/shared/floorplans/BP-Web-Home-Floor-Plans-Retreat.png",
-    size: "Small"
+    size: "Small",
   },
   {
     id: "sequoia",
@@ -50,7 +50,7 @@ const allFloorPlans: FloorPlan[] = [
     bathrooms: 2,
     sqft: 425,
     image: "/images/shared/floorplans/BP-Web-Home-Floor-Plans-sequoia.png",
-    size: "Medium"
+    size: "Medium",
   },
   {
     id: "teak",
@@ -60,8 +60,8 @@ const allFloorPlans: FloorPlan[] = [
     bathrooms: 1,
     sqft: 425,
     image: "/images/shared/floorplans/BP-Web-Home-Floor-Plans-teak.png",
-    size: "Light"
-  }
+    size: "Light",
+  },
 ];
 
 interface FloorPlansGridProps {
@@ -71,17 +71,17 @@ interface FloorPlansGridProps {
   cardClassName?: string;
 }
 
-export default function FloorPlansGrid({ 
-  floorPlans = allFloorPlans, 
+export default function FloorPlansGrid({
+  floorPlans = allFloorPlans,
   showLimit,
   className = "",
-  cardClassName = ""
+  cardClassName = "",
 }: FloorPlansGridProps) {
   const displayPlans = showLimit ? floorPlans.slice(0, showLimit) : floorPlans;
 
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 ${className}`}>
-      {displayPlans.map((plan) => (
+      {displayPlans.map(plan => (
         <div
           key={plan.id}
           className={`group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${cardClassName}`}
