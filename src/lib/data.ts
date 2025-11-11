@@ -42,7 +42,7 @@ export const projects: Project[] = [
 
     // EDIT: Display information
     hoverName: "39th Street Residence",
-    hoverAddress: "39th Street, Portland, OR",
+    hoverAddress: "39th Street,San Diego, CA",
     location: "Portland, OR",
 
     // EDIT: Project details
@@ -95,7 +95,7 @@ export const projects: Project[] = [
 
     // EDIT: Display information
     hoverName: "Dean Street Home",
-    hoverAddress: "Dean Street, Portland, OR",
+    hoverAddress: "Dean Street,San Diego, CA",
     location: "Portland, OR",
 
     // EDIT: Project details
@@ -149,7 +149,7 @@ export const projects: Project[] = [
 
     // EDIT: Display information
     hoverName: "Murray Street Residence",
-    hoverAddress: "Murray Street, Portland, OR",
+    hoverAddress: "Murray Street,San Diego, CA",
     location: "Portland, OR",
 
     // EDIT: Project details
