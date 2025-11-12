@@ -27,19 +27,6 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "hoverName",
-      title: "Display Name",
-      type: "string",
-      description: "Name shown on cards and hover states",
-      validation: Rule => Rule.required(),
-    }),
-    defineField({
-      name: "hoverAddress",
-      title: "Address",
-      type: "string",
-      description: 'Street address shown on hover (e.g., "39th Street,San Diego, CA")',
-    }),
-    defineField({
       name: "location",
       title: "Location",
       type: "string",

@@ -8,7 +8,7 @@ export default function Section3() {
         showFilters={false}
         showLimit={3}
         title="Floor Plans"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        description="Explore our collection of thoughtfully designed floor plans, each crafted to maximize functionality and style. From cozy ADUs to spacious family homes, find the perfect layout that fits your vision and lifestyle."
         showViewAllButton={true}
       />
 

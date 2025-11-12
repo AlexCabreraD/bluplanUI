@@ -41,8 +41,6 @@ export const projects: Project[] = [
     ],
 
     // EDIT: Display information
-    hoverName: "39th Street Residence",
-    hoverAddress: "39th Street,San Diego, CA",
     location: "San Diego, CA",
 
     // EDIT: Project details
@@ -94,8 +92,6 @@ export const projects: Project[] = [
     ],
 
     // EDIT: Display information
-    hoverName: "Dean Street Home",
-    hoverAddress: "Dean Street,San Diego, CA",
     location: "San Diego, CA",
 
     // EDIT: Project details
@@ -148,8 +144,6 @@ export const projects: Project[] = [
     ],
 
     // EDIT: Display information
-    hoverName: "Murray Street Residence",
-    hoverAddress: "Murray Street,San Diego, CA",
     location: "San Diego, CA",
 
     // EDIT: Project details

@@ -38,7 +38,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
             <OptimizedImage
               src={project.heroImage}
-              alt={project.hoverName}
+              alt={project.title}
               fill
               className="object-cover"
               priority
@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <div className="bg-white px-4 sm:px-8 lg:px-[60px] pt-6 sm:pt-8 lg:pt-[40px] pb-6 sm:pb-8 lg:pb-12">
                   {/* Project Title */}
                   <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-2 leading-tight">
-                    {project.hoverName}
+                    {project.title}
                   </h1>
                   <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">
                     {project.location}
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="bg-white py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Gallery Grid - Asymmetric Layout */}
-            <ProjectGallery images={project.galleryImages} projectName={project.hoverName} />
+            <ProjectGallery images={project.galleryImages} projectName={project.title} />
           </div>
         </section>
 

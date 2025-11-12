@@ -17,8 +17,6 @@ export function sanityProjectToProject(sanityProject: SanityProject): Project {
     cars: sanityProject.cars,
     stories: sanityProject.stories,
     image: urlForImage(sanityProject.thumbnailImage).url(),
-    hoverName: sanityProject.hoverName,
-    hoverAddress: sanityProject.hoverAddress,
     location: sanityProject.location,
     description: sanityProject.description,
     heroImage: urlForImage(sanityProject.heroImage).url(),

@@ -10,8 +10,6 @@ export interface Project {
   cars: number;
   stories?: number;
   image: string;
-  hoverName: string;
-  hoverAddress: string;
   location: string;
   description: string;
   heroImage: string;

@@ -6,8 +6,6 @@ export interface SanityProject {
   title: string;
   subtitle: string;
   slug: string;
-  hoverName: string;
-  hoverAddress: string;
   location: string;
   description: string;
   category: string;
