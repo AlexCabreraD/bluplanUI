@@ -16,10 +16,8 @@ export default defineConfig({
   name: "default",
   title: "BluPlan Studio",
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "wbug4r39",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-
-  basePath: "/studio",
 
   plugins: [structureTool()],
 
