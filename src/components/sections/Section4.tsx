@@ -82,6 +82,24 @@ export default function Section4({ homeProjects }: Section4Props) {
     document.addEventListener("mouseup", handleMouseUp);
   };
 
+  if (homeProjects.length === 0) {
+    return (
+      <>
+        <section className="py-12 sm:py-16 lg:py-[75px] bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] xl:leading-[52px] font-bold text-black mb-8 sm:mb-10 lg:mb-12">
+              Projects
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg">
+              No projects available at the moment. Check back soon!
+            </p>
+          </div>
+        </section>
+        <Divider variant="grey" />
+      </>
+    );
+  }
+
   return (
     <>
       <section className="py-12 sm:py-16 lg:py-[75px] bg-white">
