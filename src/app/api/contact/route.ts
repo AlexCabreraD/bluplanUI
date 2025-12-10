@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "BluPlan Studio <admin@bluplanstudio.com>",
-      to: "admin@bluplanstudio.com",
+      to: "AlexCabreraD22@gmail.com",
       subject: `New Contact Form Submission${serviceType ? `: ${serviceType}` : ""}`,
       replyTo: email,
       html: `
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
           <!-- Header -->
           <tr>
             <td style="background-color: #0012BA; padding: 40px 20px; text-align: center;">
-              <div style="color: #ffffff; font-size: 36px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: 2px; font-family: 'Rajdhani', Arial, sans-serif;">BluPlan Studio</div>
+              <img src="https://bluplanstudio.com/images/logo-email.jpg" alt="BluPlan Studio" width="600" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px auto;" />
               <h1 style="color: #ffffff; font-size: 20px; font-weight: 400; margin: 0; opacity: 0.95;">New Contact Form Submission</h1>
             </td>
           </tr>
