@@ -107,9 +107,7 @@ export async function POST(req: Request) {
             <td style="background-color: #2d2d2d; padding: 30px 20px; text-align: center;">
               <p style="color: #ffffff; margin: 0 0 15px 0; font-size: 13px;">This message was sent from the BluPlan Studio contact form</p>
               <p style="color: #e5e5e5; margin: 8px 0; font-size: 13px;">1223 3rd Ave Suite F and E, Chula Vista, CA 91911</p>
-              <p style="color: #e5e5e5; margin: 8px 0; font-size: 13px;">
-                <a href="tel:6198308110" style="color: #FFA500; text-decoration: none; font-weight: 600;">(619) 830-8110</a>
-              </p>
+              <p style="color: #FFA500; margin: 8px 0; font-size: 13px; font-weight: 600;">(619) 830-8110</p>
             </td>
           </tr>
         </table>
