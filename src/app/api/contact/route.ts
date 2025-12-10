@@ -55,8 +55,8 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="padding-bottom: 24px;">
                     <div style="font-weight: 600; color: #0012BA; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">EMAIL</div>
-                    <div style="color: #333333; padding: 14px; background-color: #f9f9f9; border-left: 4px solid #0012BA; font-size: 15px;">
-                      <a href="mailto:${email}" style="color: #0012BA; text-decoration: none;">${email}</a>
+                    <div style="color: #0012BA; padding: 14px; background-color: #f9f9f9; border-left: 4px solid #0012BA; font-size: 15px;">
+                      ${email}
                     </div>
                   </td>
                 </tr>
@@ -68,8 +68,8 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="padding-bottom: 24px;">
                     <div style="font-weight: 600; color: #0012BA; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">PHONE</div>
-                    <div style="color: #333333; padding: 14px; background-color: #f9f9f9; border-left: 4px solid #0012BA; font-size: 15px;">
-                      <a href="tel:${phone}" style="color: #0012BA; text-decoration: none;">${phone}</a>
+                    <div style="color: #0012BA; padding: 14px; background-color: #f9f9f9; border-left: 4px solid #0012BA; font-size: 15px;">
+                      ${phone}
                     </div>
                   </td>
                 </tr>
