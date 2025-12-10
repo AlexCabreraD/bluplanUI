@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "BluPlan Studio <admin@bluplanstudio.com>",
-      to: "AlexCabreraD22@gmail.com",
+      to: "admin@bluplanstudio.com",
       subject: `New Contact Form Submission${serviceType ? `: ${serviceType}` : ""}`,
       replyTo: email,
       html: `
