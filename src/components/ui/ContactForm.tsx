@@ -13,6 +13,11 @@ export default function ContactForm() {
   });
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const serviceTypes = [
     "Architectural Design",
@@ -38,10 +43,49 @@ export default function ContactForm() {
     setIsDropdownOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you for your message! We'll get back to you shortly.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          serviceType: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message:
+            "We're sorry, there was an error sending your message. Please call us at (619) 830-8110 or email us at admin@bluplanstudio.com.",
+        });
+      }
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "We're sorry, there was an error sending your message. Please call us at (619) 830-8110 or email us at admin@bluplanstudio.com.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -207,16 +251,32 @@ export default function ContactForm() {
                 />
               </div>
 
+              {/* Status Messages */}
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
               {/* Submit Button */}
               <div className="flex justify-center sm:justify-end pt-6">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-transparent border-0 text-black font-medium group relative pb-1 cursor-pointer text-lg sm:text-xl"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center gap-2 bg-transparent border-0 text-black font-medium group relative pb-1 cursor-pointer text-lg sm:text-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
-                  <span className="transform group-hover:translate-x-1 transition-transform duration-200 font-bold text-xl leading-none flex items-center">
-                    →
-                  </span>
+                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                  {!isSubmitting && (
+                    <span className="transform group-hover:translate-x-1 transition-transform duration-200 font-bold text-xl leading-none flex items-center">
+                      →
+                    </span>
+                  )}
                   <div className="absolute bottom-0 left-0 h-[2px] bg-[#009ce0] w-0 group-hover:w-full transition-all duration-300 ease-out"></div>
                 </button>
               </div>
