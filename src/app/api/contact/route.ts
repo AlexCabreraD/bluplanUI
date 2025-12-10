@@ -33,9 +33,18 @@ export async function POST(req: Request) {
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; max-width: 600px; border: 1px solid #e0e0e0;">
           <!-- Header -->
           <tr>
-            <td style="background-color: #0012BA; padding: 40px 20px; text-align: center;">
-              <img src="https://bluplanstudio.com/images/logo-email.jpg" alt="BluPlan Studio" width="600" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px auto;" />
-              <h1 style="color: #ffffff; font-size: 20px; font-weight: 400; margin: 0; opacity: 0.95;">New Contact Form Submission</h1>
+            <td style="background-color: #0012BA; padding: 40px 20px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="width: 120px; vertical-align: middle;">
+                    <img src="https://bluplanstudio.com/images/logo-email.jpg" alt="BluPlan Studio Logo" width="120" style="max-width: 120px; height: auto; display: block;" />
+                  </td>
+                  <td style="vertical-align: middle; padding-left: 20px;">
+                    <div style="color: #ffffff; font-size: 36px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: 2px; font-family: 'Rajdhani', Arial, sans-serif;">BluPlan Studio</div>
+                    <h1 style="color: #ffffff; font-size: 20px; font-weight: 400; margin: 0; opacity: 0.95;">New Contact Form Submission</h1>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
